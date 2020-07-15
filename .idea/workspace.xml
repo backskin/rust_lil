@@ -21,10 +21,9 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5a6486a0-7669-4283-aeb2-9b8aa37aa9fb" name="Default Changelist" comment="воу, зря не коммитил раньше, тут столько всего понаписалось. Да, язык, конечно, интереееесный, дааа">
-      <change afterPath="$PROJECT_DIR$/src/hard_methods_module.rs" afterDir="false" />
+    <list default="true" id="5a6486a0-7669-4283-aeb2-9b8aa37aa9fb" name="Default Changelist" comment="+cats and humans">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hard_methods_module.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/hard_methods_module.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594818149747</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="+cats and humans">
+      <created>1594819445426</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1594819445426</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,7 +142,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ну комит и комит" />
     <MESSAGE value="воу, зря не коммитил раньше, тут столько всего понаписалось. Да, язык, конечно, интереееесный, дааа" />
-    <option name="LAST_COMMIT_MESSAGE" value="воу, зря не коммитил раньше, тут столько всего понаписалось. Да, язык, конечно, интереееесный, дааа" />
+    <MESSAGE value="+cats and humans" />
+    <option name="LAST_COMMIT_MESSAGE" value="+cats and humans" />
   </component>
   <component name="WindowStateProjectService">
     <state x="479" y="131" width="1024" height="852" key="#Project_Structure" timestamp="1594703931704">
@@ -147,26 +154,26 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="72" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1594639842256" />
-    <state x="804" y="272" width="374" height="569" key="#com.intellij.ide.util.MemberChooser" timestamp="1594819163423">
+    <state x="804" y="272" width="374" height="569" key="#com.intellij.ide.util.MemberChooser" timestamp="1594819888688">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="804" y="272" width="374" height="569" key="#com.intellij.ide.util.MemberChooser/72.27.1848.1053@72.27.1848.1053" timestamp="1594819163423" />
-    <state width="868" height="275" key="GridCell.Tab.0.bottom" timestamp="1594819229188">
+    <state x="804" y="272" width="374" height="569" key="#com.intellij.ide.util.MemberChooser/72.27.1848.1053@72.27.1848.1053" timestamp="1594819888688" />
+    <state width="868" height="275" key="GridCell.Tab.0.bottom" timestamp="1594821418528">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="868" height="275" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1594819229188" />
-    <state width="868" height="275" key="GridCell.Tab.0.center" timestamp="1594819229187">
+    <state width="868" height="275" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1594821418528" />
+    <state width="868" height="275" key="GridCell.Tab.0.center" timestamp="1594821418527">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="868" height="275" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1594819229187" />
-    <state width="868" height="275" key="GridCell.Tab.0.left" timestamp="1594819229187">
+    <state width="868" height="275" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1594821418527" />
+    <state width="868" height="275" key="GridCell.Tab.0.left" timestamp="1594821418526">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="868" height="275" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1594819229187" />
-    <state width="868" height="275" key="GridCell.Tab.0.right" timestamp="1594819229188">
+    <state width="868" height="275" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1594821418526" />
+    <state width="868" height="275" key="GridCell.Tab.0.right" timestamp="1594821418527">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="868" height="275" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1594819229188" />
+    <state width="868" height="275" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1594821418527" />
     <state x="1054" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1594818158539">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
