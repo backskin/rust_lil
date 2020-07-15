@@ -71,4 +71,44 @@ pub fn traits(){
 
 }
 
+use std::fmt::Debug;
+
+trait Shape {
+    fn area(&self) -> f64;
+}
+
+#[derive(Debug)]
+struct Circle {
+    radius: f64,
+}
+
+#[derive(Debug)]
+struct Triangle {
+    side_a:f64,
+    side_b:f64,
+    side_c:f64,
+}
+
+#[derive(Debug)]
+struct Square {
+    side:f64,
+}
+
+impl Shape for Circle{
+    fn area(&self) -> f64 {
+        self.radius*self.radius*std::f64::consts::PI
+    }
+}
+
+
+pub fn trait_params(){
+
+    fn print_area(shape: impl Shape + Debug){
+        println!("The area is {}", shape.area());
+    }
+
+    let c = Circle {radius: 2.0};
+    print_area(c);
+}
+
 

@@ -17,7 +17,7 @@ use crate::collections_module::{vectors, hashmaps};
 use crate::string_module::{strings, str_formatting};
 use crate::kladov_lectures::intro;
 use crate::methods_module::{functions, methods, closures, high_order_functions};
-use crate::hard_methods_module::traits;
+use crate::hard_methods_module::{traits, trait_params};
 
 fn main () {
     println!("Main Function");
@@ -47,5 +47,6 @@ fn main () {
     // methods();
     // closures();
     // high_order_functions();
-    traits();
+    // traits();
+    trait_params();
 }
