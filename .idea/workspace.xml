@@ -21,10 +21,10 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5a6486a0-7669-4283-aeb2-9b8aa37aa9fb" name="Default Changelist" comment="into start">
+    <list default="true" id="5a6486a0-7669-4283-aeb2-9b8aa37aa9fb" name="Default Changelist" comment="drops-almost-done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hard_methods_module.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/traits_module.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/traits_module.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/traits_module.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594879079423</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="drops-almost-done">
+      <created>1594881560447</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1594881560447</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -185,7 +192,8 @@
     <MESSAGE value="we got the trait params" />
     <MESSAGE value="added 'target' folder to gitignore" />
     <MESSAGE value="into start" />
-    <option name="LAST_COMMIT_MESSAGE" value="into start" />
+    <MESSAGE value="drops-almost-done" />
+    <option name="LAST_COMMIT_MESSAGE" value="drops-almost-done" />
   </component>
   <component name="WindowStateProjectService">
     <state x="479" y="131" width="1024" height="852" key="#Project_Structure" timestamp="1594703931704">
@@ -196,34 +204,34 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="72" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1594639842256" />
-    <state x="804" y="272" width="374" height="569" key="#com.intellij.ide.util.MemberChooser" timestamp="1594880706808">
+    <state x="804" y="272" width="374" height="569" key="#com.intellij.ide.util.MemberChooser" timestamp="1594885489289">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="804" y="272" width="374" height="569" key="#com.intellij.ide.util.MemberChooser/72.27.1848.1053@72.27.1848.1053" timestamp="1594880706808" />
-    <state width="957" height="275" key="GridCell.Tab.0.bottom" timestamp="1594881228099">
+    <state x="804" y="272" width="374" height="569" key="#com.intellij.ide.util.MemberChooser/72.27.1848.1053@72.27.1848.1053" timestamp="1594885489289" />
+    <state width="957" height="275" key="GridCell.Tab.0.bottom" timestamp="1594885633047">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="957" height="275" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1594881228099" />
-    <state width="957" height="275" key="GridCell.Tab.0.center" timestamp="1594881228097">
+    <state width="957" height="275" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1594885633047" />
+    <state width="957" height="275" key="GridCell.Tab.0.center" timestamp="1594885633047">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="957" height="275" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1594881228097" />
-    <state width="957" height="275" key="GridCell.Tab.0.left" timestamp="1594881228096">
+    <state width="957" height="275" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1594885633047" />
+    <state width="957" height="275" key="GridCell.Tab.0.left" timestamp="1594885633046">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="957" height="275" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1594881228096" />
-    <state width="957" height="275" key="GridCell.Tab.0.right" timestamp="1594881228098">
+    <state width="957" height="275" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1594885633046" />
+    <state width="957" height="275" key="GridCell.Tab.0.right" timestamp="1594885633047">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="957" height="275" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1594881228098" />
+    <state width="957" height="275" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1594885633047" />
     <state x="72" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1594880851423">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="72" y="188" width="1022" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1594880851423" />
-    <state x="1054" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1594818158539">
+    <state x="1054" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1594881570624">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="1054" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/72.27.1848.1053@72.27.1848.1053" timestamp="1594818158539" />
+    <state x="1054" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/72.27.1848.1053@72.27.1848.1053" timestamp="1594881570624" />
     <state x="450" y="89" width="1372" height="554" key="new project wizard" timestamp="1594799424214">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>

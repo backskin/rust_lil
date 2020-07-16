@@ -1,5 +1,3 @@
-#![allow(dead_code)]
-
 trait Animal
 {
     fn create(name: &'static str) -> Self;
@@ -198,11 +196,11 @@ impl Person{
 pub fn into_the_into(){
 
     //Into
+    // Most of the code for this exercise is up above
 
-    let john = Person::new("John");
-
+    let _john = Person::new("John");
     let name = "Jane Watson".to_string();
-    let jane = Person::new(name);
+    let _jane = Person::new(name);
 }
 
 struct Creature {
@@ -241,8 +239,99 @@ pub fn drops(){
 
     // Even so we're allowed to call a global drop() function
     // to keep object's destruction event in touch
-    // (to see its inevitability)
+    // (to definitely know, when the data of variable gonna be cleaned up)
     drop(gargoyle);
+
+    // after this step, compiler won't allow us to use
+    // our variable 'gargoyle' anymore.
+    // "error[E0382]: borrow of moved value: `gargoyle`"
+    // println!("{}",gargoyle.name);
+
+    //In most cases, however, it is a rather unnecessary
+    // thing to have in your code (we're talking about Drop trait)
+}
+
+use std::ops::{Add, AddAssign, Neg, Sub};
+
+#[derive(Debug, Copy, Clone)]
+struct Complex<T>{
+    re: T,
+    im: T,
+}
+
+impl <T> Complex<T>{
+    fn new(re: T, im: T) -> Complex<T> {
+        Complex::<T> { re, im }
+    }
+}
+
+// impl Add for Complex<i32>{
+//     type Output = Complex<i32>;
+//
+//     fn add(self, rhs: Self) -> Self::Output {
+//        Complex {
+//            re : self.re + rhs.re,
+//            im: self.im + rhs.im,
+//        }
+//     }
+// }
+
+// Looks like we need to make
+// this Add-operator to be a generic one
+// as well as a Complex struct already is.
+
+
+impl<T> Add for Complex<T>
+    where T: Add<Output = T>
+{
+    type Output = Complex<T>;
+    fn add(self, rhs: Self) -> Self::Output {
+        Complex {
+            re : self.re + rhs.re,
+            im: self.im + rhs.im,
+        }
+    }
+}
+
+impl<T> AddAssign for Complex<T>
+    where T: AddAssign<T>
+{
+    fn add_assign(&mut self, rhs: Self) {
+        self.re += rhs.re;
+        self.im += rhs.im;
+    }
+}
+
+impl<T> Neg for Complex<T>
+    where T: Neg<Output=T>
+{
+    type Output = Complex<T>;
+    fn neg(self) -> Self::Output {
+        Complex{
+            re: -self.re,
+            im: -self.im,
+        }
+    }
+}
+
+impl<T> Sub for Complex<T>
+    where T: Sub<Output=T> + Neg<Output=T> + Add<Output=T>
+{
+    type Output = Complex<T>;
+    fn sub(self, rhs: Self) -> Self::Output {
+        self+-rhs
+    }
+}
+
+pub fn operator_overloading(){
+    let a = Complex::new(1, 2);
+    let b = Complex::new(1, 2);
+    let res_1 = a+b;
+    println!("sum = {:?}", res_1);
+    let c = Complex::new(1.0, 2.0);
+    let d = Complex::new(1.5, 2.5);
+    let res_2 = c-d;
+    println!("sum = {:?}; c={:?}, d={:?}", res_2, c, d);
 }
 
 
