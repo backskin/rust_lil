@@ -20,7 +20,7 @@ use crate::string_module::{strings, str_formatting};
 use crate::kladov_lectures::intro;
 use crate::methods_module::{functions, methods, closures, high_order_functions};
 use crate::traits_module::{traits, trait_params, into_the_into, drops, operator_overloading};
-use crate::dispatches_module::static_dispatches;
+use crate::dispatches_module::{static_dispatches, dynamic_dispatches};
 
 fn main () {
     println!("Main Function");
@@ -55,5 +55,6 @@ fn main () {
     // into_the_into();
     // drops();
     // operator_overloading();
-    static_dispatches();
+    // static_dispatches();
+    dynamic_dispatches();
 }
