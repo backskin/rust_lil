@@ -162,13 +162,87 @@ pub fn trait_params(){
     print_area_template(tri.borrow());
     print_area_template(&circle);
     // now we can refer to the same variable without a fear
-    // of losing it's value
+    // of losing its value
     print_area_template(&circle);
 
 }
 
+struct Person{
+    name: String,
+}
+
+impl Person{
+    // fn new(name: &str) -> Person{
+    //     Person {name: name.to_string()}
+    // }
+
+    // now we specify the template of type
+    // to be convertible _into_ the String struct.
+    // (basically, 'Into' is just another trait)
+
+    // fn new<S: Into<String>>(name: S)-> Person {
+    //     Person {
+    //         name: name.into(),
+    //     }
+    // }
+
+    //and, of course, there is another/alternative way
+    // to implement 'new' function with the 'Into' trait:
+
+    fn new<S>(name: S) -> Person
+    where S: Into<String>{
+        Person { name: name.into(), }
+    }
+}
+
 pub fn into_the_into(){
 
+    //Into
+
+    let john = Person::new("John");
+
+    let name = "Jane Watson".to_string();
+    let jane = Person::new(name);
+}
+
+struct Creature {
+    name: String,
+}
+
+impl Creature {
+    fn new<T: Into<String>>(name: T) -> Creature {
+        Creature { name: name.into(), }
+    }
+
+}
+// next stop is where we implement Drop trait to
+// specify where and how exactly our value will be
+// cleaned up
+
+impl Drop for Creature {
+    fn drop(&mut self) {
+        println!("{} is dead", self.name);
+    }
+}
+
+pub fn drops(){
+
+    let gargoyle = Creature::new("Jeff");
+    println!("game proceeds");
+    // we do nothing here, yet by the end of the scope,
+    // the .drop method will be executed, so we should
+    // see our exclamation, implemented inside
+    // the 'Drop trait' .drop method above
+
+    // furthermore, if we will execute .drop explicitly,
+    // the compiler will report an error:
+    // "error[E0040]: explicit use of destructor method"
+    // gargoyle.drop();
+
+    // Even so we're allowed to call a global drop() function
+    // to keep object's destruction event in touch
+    // (to see its inevitability)
+    drop(gargoyle);
 }
 
 
