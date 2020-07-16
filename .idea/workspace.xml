@@ -21,10 +21,10 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5a6486a0-7669-4283-aeb2-9b8aa37aa9fb" name="Default Changelist" comment="dynamic dispatch totally done">
+    <list default="true" id="5a6486a0-7669-4283-aeb2-9b8aa37aa9fb" name="Default Changelist" comment="lifetime module started">
+      <change afterPath="$PROJECT_DIR$/src/lifetime_module.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dispatches_module.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/dispatches_module.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/traits_module.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/traits_module.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594898389272</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="dynamic dispatch totally TOTALLY done">
+      <created>1594899482680</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1594899482680</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,7 +247,9 @@
     <MESSAGE value="static dispatch" />
     <MESSAGE value="dynamic dispatch done" />
     <MESSAGE value="dynamic dispatch totally done" />
-    <option name="LAST_COMMIT_MESSAGE" value="dynamic dispatch totally done" />
+    <MESSAGE value="dynamic dispatch totally TOTALLY done" />
+    <MESSAGE value="lifetime module started" />
+    <option name="LAST_COMMIT_MESSAGE" value="lifetime module started" />
   </component>
   <component name="WindowStateProjectService">
     <state x="479" y="131" width="1024" height="852" key="#Project_Structure" timestamp="1594703931704">
@@ -255,22 +264,22 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="804" y="272" width="374" height="569" key="#com.intellij.ide.util.MemberChooser/72.27.1848.1053@72.27.1848.1053" timestamp="1594898994286" />
-    <state width="957" height="275" key="GridCell.Tab.0.bottom" timestamp="1594899226488">
+    <state width="878" height="275" key="GridCell.Tab.0.bottom" timestamp="1594904640933">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="957" height="275" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1594899226488" />
-    <state width="957" height="275" key="GridCell.Tab.0.center" timestamp="1594899226487">
+    <state width="878" height="275" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1594904640933" />
+    <state width="878" height="275" key="GridCell.Tab.0.center" timestamp="1594904640932">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="957" height="275" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1594899226487" />
-    <state width="957" height="275" key="GridCell.Tab.0.left" timestamp="1594899226486">
+    <state width="878" height="275" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1594904640932" />
+    <state width="878" height="275" key="GridCell.Tab.0.left" timestamp="1594904640931">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="957" height="275" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1594899226486" />
-    <state width="957" height="275" key="GridCell.Tab.0.right" timestamp="1594899226487">
+    <state width="878" height="275" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1594904640931" />
+    <state width="878" height="275" key="GridCell.Tab.0.right" timestamp="1594904640932">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="957" height="275" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1594899226487" />
+    <state width="878" height="275" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1594904640932" />
     <state x="72" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1594880851423">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
