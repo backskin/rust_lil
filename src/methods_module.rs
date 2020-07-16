@@ -13,8 +13,6 @@ fn product (x: &i32, y:&i32) -> i32{
     *x * *y
 }
 
-
-
 pub fn functions(){
     let my_x = &mut 54.1;
     pri_val(*my_x);

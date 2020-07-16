@@ -85,7 +85,55 @@ pub fn why_dynamic_dispatch(){
     }
 }
 
+use crate::traits_module::{Animal, Human, Cat};
+
+enum AnimalEnum {
+    //Although, we've got
+    //Elements of the same ENUM,
+    //the storage of particular
+    //Enum element can be virtually
+    //anything.
+    // As an example, it can be our
+    // existing struct as Human and Cat
+    Human(Human), Cat(Cat)
+}
+
 pub fn vectors_of_objects(){
+
+    let mut animals = Vec::new();
+    // animals.push(Human{ name: "John" });
+    // animals.push(Cat{ name: "Fluffy" });
+
+    //we're not allowed to add elements
+    //like it happens in the example above.
+
+    //Instead, we will use Enum objects
+    //as in the following example:
+
+    animals.push(AnimalEnum::Human(
+        Human{ name: "John" },
+    ));
+    animals.push(AnimalEnum::Cat(
+        Cat{ name: "Fluffy" },
+    ));
+
+    for c in animals{
+        match c {
+            AnimalEnum::Human(human)=> human.talk(),
+            AnimalEnum::Cat(cat) => cat.talk(),
+        }
+    }
+
+    // Unfortunate side of this implementation is that
+    // we have to introduce a brand new Enum, which is
+    // annoying, because we already have an abstraction
+    // called Animal.
+
+    // Another downside is that to get access to the methods
+    // of objects, we have to use 'match pattern' construction.
+    // This thing hugely extends our code for the case if
+    // we have a lot of subtypes, that implement our
+    // trait.
 
 }
 
