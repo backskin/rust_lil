@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 trait Animal
 {
     fn create(name: &'static str) -> Self;
@@ -72,6 +74,8 @@ pub fn traits(){
 }
 
 use std::fmt::Debug;
+use crate::study_module::while_loop;
+use std::borrow::Borrow;
 
 trait Shape {
     fn area(&self) -> f64;
@@ -100,15 +104,57 @@ impl Shape for Circle{
     }
 }
 
+impl Shape for Triangle{
+    fn area(&self) -> f64 {
+        let h_per = 0.5 * (self.side_a + self.side_b + self.side_c);
+        (h_per * (h_per - self.side_a) * (h_per - self.side_b) * (h_per - self.side_c)).sqrt()
+    }
+}
+
+impl Shape for Square {
+    fn area(&self) -> f64 {
+        self.side * self.side
+    }
+}
 
 pub fn trait_params(){
 
-    fn print_area(shape: impl Shape + Debug){
+    // we use '&' for borrowing the address, not the value itself
+    // otherwise we would move the value (a Shape object) to the function,
+    // this will cause an Error, if we will address the same variable
+    // (this variable will be guaranteed uninitialized by that moment)
+    fn print_area(shape: &(impl Shape + Debug)){
         println!("The area is {}", shape.area());
     }
 
-    let c = Circle {radius: 2.0};
-    print_area(c);
+    let circle = Circle {radius: 2.0};
+    print_area(&circle);
+
+    fn print_shape_area<T: Shape + Debug>(shape: &T){
+        println!("shape area = {}", shape.area())
+    }
+
+    let sq = Square{ side: 20.0};
+    println!("Square, side={}", sq.side);
+    print_shape_area(&sq);
+    let tri = Triangle{
+        side_a: 15.5,
+        side_b: 12.2,
+        side_c: 18.0,};
+    println!("Triangle, a={}, b={}, c={}",
+             tri.side_a, tri.side_b, tri.side_c);
+    print_shape_area(&tri);
+
+    fn print_area_template<T>(shape: &T) where T: Shape + Debug
+    {
+        println!("{:?}", shape);
+        println!("The mthfkr area is {}", shape.area());
+    }
+
+    print_area_template(tri.borrow());
+    print_area_template(&circle);
+    print_area_template(&circle);
+
 }
 
 
