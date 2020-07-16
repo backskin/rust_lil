@@ -75,37 +75,43 @@ use std::fmt::Debug;
 use crate::study_module::while_loop;
 use std::borrow::Borrow;
 
-trait Shape {
+pub(crate) trait Shape {
     fn area(&self) -> f64;
 }
 
 #[derive(Debug)]
-struct Circle {
-    radius: f64,
+pub(crate) struct Circle {
+    pub(crate) radius: f64,
 }
 
 #[derive(Debug)]
-struct Triangle {
-    side_a:f64,
-    side_b:f64,
-    side_c:f64,
+pub(crate) struct Triangle {
+    pub(crate) side_a:f64,
+    pub(crate) side_b:f64,
+    pub(crate) side_c:f64,
 }
 
 #[derive(Debug)]
-struct Square {
-    side:f64,
+pub(crate) struct Square {
+    pub(crate) side:f64,
 }
 
 impl Shape for Circle{
     fn area(&self) -> f64 {
-        self.radius*self.radius*std::f64::consts::PI
+        self.radius*self.radius
+            *std::f64::consts::PI
     }
 }
 
 impl Shape for Triangle{
     fn area(&self) -> f64 {
-        let h_per = 0.5 * (self.side_a + self.side_b + self.side_c);
-        (h_per * (h_per - self.side_a) * (h_per - self.side_b) * (h_per - self.side_c)).sqrt()
+        let h_per = 0.5*
+            (self.side_a + self.side_b + self.side_c);
+        (h_per
+            *(h_per - self.side_a)
+            *(h_per - self.side_b)
+            *(h_per - self.side_c)
+        ).sqrt()
     }
 }
 

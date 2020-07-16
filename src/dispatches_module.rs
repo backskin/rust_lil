@@ -16,8 +16,6 @@ impl Printable for String{
     }
 }
 
-
-
 pub fn static_dispatches(){
 
     let a = 123;
@@ -68,6 +66,27 @@ pub fn dynamic_dispatches(){
     // kind of struct the 'z' object really is.
     print_it_too(&a);
     print_it_too(&b);
+}
+
+use crate::traits_module::{Shape, Circle, Square, Triangle};
+
+pub fn why_dynamic_dispatch(){
+    let shapes:[&dyn Shape; 6] = [
+        &Circle{radius: 1.0},
+        &Square{side: 3.0},
+        &Circle{radius: 2.0},
+        &Square{side: 4.0},
+        &Triangle{side_a: 1.0, side_b: 1.0, side_c: 1.0},
+        &Triangle{side_a: 3.0, side_b: 4.0, side_c: 5.0},
+    ];
+
+    for (i, shape) in shapes.iter().enumerate(){
+        println!("Shape #{} has area {}", i, shape.area());
+    }
+}
+
+pub fn vectors_of_objects(){
+
 }
 
 
