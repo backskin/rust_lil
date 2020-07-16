@@ -251,7 +251,8 @@ pub fn drops(){
     // thing to have in your code (we're talking about Drop trait)
 }
 
-use std::ops::{Add, AddAssign, Neg, Sub};
+use std::ops::{Add, AddAssign, Neg, Sub,};
+use std::cmp::{PartialEq};
 
 #[derive(Debug, Copy, Clone)]
 struct Complex<T>{
@@ -323,6 +324,63 @@ impl<T> Sub for Complex<T>
     }
 }
 
+impl<T> PartialEq for Complex<T>
+    where T: PartialEq
+{
+    fn eq(&self, rhs: &Self) -> bool {
+        self.re == rhs.re && self.im == rhs.im
+    }
+}
+
+#[derive(Debug, Copy, Clone, Eq, PartialEq, )]
+struct Shmomplex<Y>{
+    re: Y,
+    im: Y,
+}
+
+impl<SomeType> Shmomplex<SomeType>{
+    fn new(re: SomeType, im: SomeType) -> Shmomplex<SomeType> {
+        Shmomplex{
+            re, im
+        }
+    }
+}
+
+impl<T> Add for Shmomplex<T>
+    where T: Add<Output=T>{
+    type Output = Shmomplex<T>;
+
+    fn add(self, rhs: Self) -> Self::Output {
+        Shmomplex { re: self.re + rhs.re, im: self.im + rhs.im, }
+    }
+}
+
+impl<T> Sub for Shmomplex<T>
+    where T: Sub<Output=T>{
+    type Output = Shmomplex<T>;
+
+    fn sub(self, rhs: Self) -> Self::Output {
+        Shmomplex{ re:self.re - rhs.re, im: self.im - rhs.im, }
+    }
+}
+
+impl<T> Neg for Shmomplex<T>
+    where T: Neg<Output=T>{
+    type Output = Shmomplex<T>;
+
+    fn neg(self) -> Self::Output {
+        Shmomplex{ re: -self.re, im: -self.im, }
+    }
+}
+
+impl<T> AddAssign for Shmomplex<T>
+    where T: AddAssign<T>{
+    fn add_assign(&mut self, rhs: Self) {
+        self.re += rhs.re;
+        self.im += rhs.im;
+    }
+}
+
 pub fn operator_overloading(){
     let a = Complex::new(1, 2);
     let b = Complex::new(1, 2);
@@ -332,6 +390,21 @@ pub fn operator_overloading(){
     let d = Complex::new(1.5, 2.5);
     let res_2 = c-d;
     println!("sum = {:?}; c={:?}, d={:?}", res_2, c, d);
+    println!("a == b ? - {}; c == d ? - {}; a == c ? - no idea",
+    a == b, c == d);
+
+    // Also we actually don't always need to implement
+    // Equality traits by a hand.
+    // Instead, we might just ask compiler to derive
+    // the implementation automatically
+
+    let mut shm_a = Shmomplex::new(1.8, 5.8);
+    let shm_b = Shmomplex::new(2.7, 1.2);
+    println!("Shmomplex:\na = {:?};\nb = {:?};\na+b = {:?};\
+    \na-b = {:?};\na+-b = {:?}.",
+    shm_a,shm_b,shm_a+shm_b,shm_a-shm_b,shm_a+-shm_b);
+    shm_a += shm_b;
+    println!("after a+=b, a = {:?}", shm_a);
 }
 
 
