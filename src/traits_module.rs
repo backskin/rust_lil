@@ -1,6 +1,18 @@
 pub(crate) trait Animal
 {
-    fn create(name: &'static str) -> Self;
+    // we've covered the 'new' method,
+    // because of the issues in the
+    // 'dispatches' module of the course.
+    // previously, this method
+    // calls an Error
+    //error[E0038]: the trait `traits_module::Animal` cannot be made into an object
+    //------ this trait cannot be made into an object...
+    //--- ...because associated function `new` has no `self` parameter
+    //help: consider turning `new` into a method by giving
+    // it a `&self` argument or constraining it so
+    // it does not apply to trait objects
+
+    // fn new(name: &'static str) -> Self;
     fn name(&self) -> &'static str;
     fn talk(&self) {
         println!("{} cannot talk", self.name());
@@ -30,9 +42,10 @@ impl Summable<i32> for Vec<i32>{
 }
 
 impl Animal for Human {
-    fn create(name: &'static str) -> Human {
-        Human { name }
-    }
+    // fn new(name: &'static str) -> Self {
+    //     Human { name }
+    // }
+
 
     fn name(&self) -> &'static str {
         self.name
@@ -44,9 +57,9 @@ impl Animal for Human {
 }
 
 impl Animal for Cat{
-    fn create(name: &'static str) -> Cat {
-        Cat { name }
-    }
+    // fn new(name: &'static str) -> Self {
+    //     Cat { name }
+    // }
 
     fn name(&self) -> &'static str {
         self.name
@@ -58,9 +71,9 @@ impl Animal for Cat{
 }
 
 pub fn traits(){
-    let h = Human::create("John");
+    let h = Human{name:"John"};
     h.talk();
-    let c = Cat::create("Misty");
+    let c = Cat{name:"Misty"};
     c.talk();
     c.talk();
 

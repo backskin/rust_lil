@@ -135,6 +135,35 @@ pub fn vectors_of_objects(){
     // we have a lot of subtypes, that implement our
     // trait.
 
+
+    // And, of course, if you may think you can
+    // 'hack' the Vec struct by
+    // saying to it that its elements are just
+    // trait types (like in example below)...
+
+    // let mut animals:Vec<dyn Animal> = Vec::new();
+    // animals.push(Human{ name: "Jacky" });
+    // animals.push(Cat{ name: "Spicy" });
+    //
+    // for animal in animals{
+    //     animal.talk();
+    // }
+
+    //... The compiler won't let you do that
+    // because of an
+    // Error[E0277]: the size for values of type
+    //`dyn traits_module::Animal` cannot be known at compilation time
+
+    //But! There is still a solution! Boxes!
+    // (Haven't achieve a knowledge of what it is yet)
+
+    let mut animals:Vec<Box<dyn Animal>> = Vec::new();
+    animals.push(Box::new(Human{name: "Jacky"}));
+    animals.push(Box::new(Cat{name: "Spicy" }));
+
+    for a in animals.iter() {
+        a.talk();
+    }
 }
 
 
