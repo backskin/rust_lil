@@ -120,9 +120,15 @@ impl Shape for Square {
 pub fn trait_params(){
 
     // we use '&' for borrowing the address, not the value itself
-    // otherwise we would move the value (a Shape object) to the function,
-    // this will cause an Error, if we will address the same variable
+    // otherwise we would move the entire value
+    // (a Shape object) to the function -
+    // this will cause a compilation error,
+    // when we will refer to the same variable
     // (this variable will be guaranteed uninitialized by that moment)
+
+    //Three ways to use traits in function's parameters
+
+    //First - litteraly use it as parameter type
     fn print_area(shape: &(impl Shape + Debug)){
         println!("The area is {}", shape.area());
     }
@@ -130,6 +136,7 @@ pub fn trait_params(){
     let circle = Circle {radius: 2.0};
     print_area(&circle);
 
+    //Second - use it as generic's constraint
     fn print_shape_area<T: Shape + Debug>(shape: &T){
         println!("shape area = {}", shape.area())
     }
@@ -145,6 +152,7 @@ pub fn trait_params(){
              tri.side_a, tri.side_b, tri.side_c);
     print_shape_area(&tri);
 
+    //Third - using a 'where' operator
     fn print_area_template<T>(shape: &T) where T: Shape + Debug
     {
         println!("{:?}", shape);
@@ -153,7 +161,13 @@ pub fn trait_params(){
 
     print_area_template(tri.borrow());
     print_area_template(&circle);
+    // now we can refer to the same variable without a fear
+    // of losing it's value
     print_area_template(&circle);
+
+}
+
+pub fn into_the_into(){
 
 }
 
