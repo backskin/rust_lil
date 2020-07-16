@@ -1,6 +1,7 @@
 #![allow(unused_imports)]
 #![allow(dead_code)]
 
+mod dispatches_module;
 mod traits_module;
 mod methods_module;
 mod kladov_lectures;
@@ -19,6 +20,7 @@ use crate::string_module::{strings, str_formatting};
 use crate::kladov_lectures::intro;
 use crate::methods_module::{functions, methods, closures, high_order_functions};
 use crate::traits_module::{traits, trait_params, into_the_into, drops, operator_overloading};
+use crate::dispatches_module::static_dispatches;
 
 fn main () {
     println!("Main Function");
@@ -52,5 +54,6 @@ fn main () {
     // trait_params();
     // into_the_into();
     // drops();
-    operator_overloading();
+    // operator_overloading();
+    static_dispatches();
 }
