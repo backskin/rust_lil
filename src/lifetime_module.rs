@@ -213,13 +213,17 @@ pub fn rc_demo(){
 }
 
 use std::thread;
-use std::sync::Arc;
+use std::sync::{Mutex, Arc};
+use std::any::Any;
+use std::borrow::Borrow;
 
-struct Zhmerson{
+
+struct Zhmerson {
     name: Arc<String>,
 }
 
 impl Zhmerson {
+    //why state is a string? why not enum?
     fn new(name: Arc<String>) -> Zhmerson{
         Zhmerson{ name }
     }
@@ -230,7 +234,7 @@ impl Zhmerson {
 }
 
 pub fn arc_demo(){
-    //When we want to pass a variable not just to many var_names, but
+    //When we want to pass a variable not just to man y var_names, but
     // throughout a several threads, we must use an 'Arc' pointer,
     // which is thread-safe
     let guy_name = Arc::new("John".to_string());
@@ -242,4 +246,56 @@ pub fn arc_demo(){
     println!("Name = {}", guy_name);
 
     t.join().unwrap();
+    //Author confessed that he cheated here,
 }
+
+struct Hrenorson{
+    name: Arc<String>,
+    state: Arc<Mutex<String>>,
+}
+
+impl Hrenorson{
+    //why state is a string? why not enum?
+    fn new(name: Arc<String>, state: Arc<Mutex<String>>) -> Hrenorson{
+        Hrenorson{ name, state }
+    }
+
+    fn greet(&mut self){
+        let mut state = self.state.lock().unwrap();
+
+        println!("Hi, my name is {} and I am {}.", self.name, state);
+
+        state.clear();
+        state.push_str("excited");
+
+        // self.state.clear();
+        // self.state.push_str("excited");
+    }
+}
+
+pub fn mutex_demo(){
+    //When we want to pass a variable not just to many var_names, but
+    // throughout a several threads, we must use an 'Arc' pointer,
+    // which is thread-safe
+    let guy_name = Arc::new("John".to_string());
+    let state = Arc::new(Mutex::new("bored".to_string()));
+    let mut guy = Hrenorson::new(
+        guy_name.clone(),
+        state.clone());
+
+    let t = thread::spawn(|| { guy.borrow().greet(); });
+
+    println!("Name = {}, State = {}", guy_name, state.lock().unwrap().as_str());
+    //we moved the 'guy' to another thread,
+    //so that's why we're not allowed to use it
+    // here
+    // guy.greet();
+
+    match  t.join() {
+        Ok(_) => {
+            guy.greet();
+        },
+        Err(_) => {},
+    };
+}
+

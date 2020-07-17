@@ -81,3 +81,7 @@ pub fn intro() {
     let _x = ();
     println!("{}",  'f');
 }
+
+pub fn second_lesson(){
+
+}

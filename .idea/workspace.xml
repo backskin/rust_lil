@@ -21,8 +21,10 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5a6486a0-7669-4283-aeb2-9b8aa37aa9fb" name="Default Changelist" comment="lifetime module continued">
+    <list default="true" id="5a6486a0-7669-4283-aeb2-9b8aa37aa9fb" name="Default Changelist" comment="refers counters and atomic refers counters">
+      <change afterPath="$PROJECT_DIR$/src/circular_module.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kladov_lectures.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/kladov_lectures.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lifetime_module.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/lifetime_module.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
     </list>
@@ -221,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594906219151</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="refers counters and atomic refers counters">
+      <created>1594974299433</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1594974299433</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,7 +266,8 @@
     <MESSAGE value="dynamic dispatch totally TOTALLY done" />
     <MESSAGE value="lifetime module started" />
     <MESSAGE value="lifetime module continued" />
-    <option name="LAST_COMMIT_MESSAGE" value="lifetime module continued" />
+    <MESSAGE value="refers counters and atomic refers counters" />
+    <option name="LAST_COMMIT_MESSAGE" value="refers counters and atomic refers counters" />
   </component>
   <component name="WindowStateProjectService">
     <state x="479" y="131" width="1024" height="852" key="#Project_Structure" timestamp="1594703931704">
@@ -272,30 +282,30 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="804" y="272" width="374" height="569" key="#com.intellij.ide.util.MemberChooser/72.27.1848.1053@72.27.1848.1053" timestamp="1594898994286" />
-    <state width="878" height="275" key="GridCell.Tab.0.bottom" timestamp="1594974086827">
+    <state width="1802" height="275" key="GridCell.Tab.0.bottom" timestamp="1594981611299">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="878" height="275" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1594974086827" />
-    <state width="878" height="275" key="GridCell.Tab.0.center" timestamp="1594974086827">
+    <state width="1802" height="275" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1594981611299" />
+    <state width="1802" height="275" key="GridCell.Tab.0.center" timestamp="1594981611298">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="878" height="275" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1594974086827" />
-    <state width="878" height="275" key="GridCell.Tab.0.left" timestamp="1594974086827">
+    <state width="1802" height="275" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1594981611298" />
+    <state width="1802" height="275" key="GridCell.Tab.0.left" timestamp="1594981611297">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="878" height="275" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1594974086827" />
-    <state width="878" height="275" key="GridCell.Tab.0.right" timestamp="1594974086827">
+    <state width="1802" height="275" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1594981611297" />
+    <state width="1802" height="275" key="GridCell.Tab.0.right" timestamp="1594981611299">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state width="878" height="275" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1594974086827" />
+    <state width="1802" height="275" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1594981611299" />
     <state x="72" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1594880851423">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="72" y="188" width="1022" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1594880851423" />
-    <state x="1054" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1594897454765">
+    <state x="1054" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1594974302209">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="1054" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/72.27.1848.1053@72.27.1848.1053" timestamp="1594897454765" />
+    <state x="1054" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/72.27.1848.1053@72.27.1848.1053" timestamp="1594974302209" />
     <state x="450" y="89" width="1372" height="554" key="new project wizard" timestamp="1594799424214">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
