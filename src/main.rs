@@ -22,7 +22,7 @@ use crate::kladov_lectures::intro;
 use crate::methods_module::{functions, methods, closures, high_order_functions};
 use crate::traits_module::{traits, trait_params, into_the_into, drops, operator_overloading};
 use crate::dispatches_module::{static_dispatches, dynamic_dispatches, why_dynamic_dispatch, vectors_of_objects};
-use crate::lifetime_module::{ownership, borrowing, lifetimes};
+use crate::lifetime_module::{ownership, borrowing, lifetimes, lifetime_in_structures, rc_demo, arc_demo};
 
 fn main () {
     println!("Main Function");
@@ -63,5 +63,8 @@ fn main () {
     // vectors_of_objects();
     // ownership();
     // borrowing();
-    lifetimes();
+    // lifetimes();
+    // lifetime_in_structures();
+    // rc_demo();
+    arc_demo();
 }
